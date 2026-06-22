@@ -46,3 +46,14 @@ jobs:
       # o para asegurarnos que se conecte correctamente al servicio de arriba.
       run: |
         python manage.py test
+
+    - name: Build Docker Image
+      run: |
+        docker build -t gestion-web:latest .
+        docker save gestion-web:latest > gestion-web.tar
+
+    - name: Upload Docker Image Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-image
+        path: gestion-web.tar
