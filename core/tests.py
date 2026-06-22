@@ -19,10 +19,6 @@ class ProductoViewTest(TestCase):
         resp = self.client.get('/')
         self.assertEqual(resp.status_code, 200)
 
-    def test_falla_a_proposito(self):
-        # Esta prueba está diseñada para fallar para obtener la captura
-        self.assertEqual(1, 2)
-
     def test_view_url_by_name(self):
         resp = self.client.get(reverse('producto_list'))
         self.assertEqual(resp.status_code, 200)
