@@ -20,6 +20,8 @@ class ProductoViewTest(TestCase):
         self.assertEqual(resp.status_code, 200)
 
     def test_view_url_by_name(self):
+        # ERROR INTENCIONAL PARA CAPTURA DE GITHUB ACTIONS
+        self.assertEqual(1, 2)
         resp = self.client.get(reverse('producto_list'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'core/producto_list.html')
