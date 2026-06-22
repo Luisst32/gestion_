@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>Productos</h1>
+        <a href="{% url 'producto_create' %}" class="btn">+ Nuevo Producto</a>
+    </div>
+    
+    {% if productos %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th style="width: 150px;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>
+                    <strong style="font-size: 1.1rem;">{{ producto.nombre }}</strong><br>
+                    <small style="color: var(--text-muted)">{{ producto.descripcion }}</small>
+                </td>
+                <td style="font-size: 1.1rem; font-weight: 500;">${{ producto.precio }}</td>
+                <td>
+                    <a href="{% url 'producto_update' producto.id %}" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-right: 0.5rem;">Editar</a>
+                    <a href="{% url 'producto_delete' producto.id %}" class="btn btn-danger" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="color: var(--text-muted); margin-top: 2rem; text-align: center;">No hay productos registrados aún. ¡Agrega uno nuevo!</p>
+    {% endif %}
+</div>
+{% endblock %}

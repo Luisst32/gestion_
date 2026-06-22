@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="card" style="max-width: 600px; margin: 0 auto;">
+    <h2>{% if object %}Editar Producto{% else %}Crear Producto{% endif %}</h2>
+    <form method="post" style="margin-top: 1.5rem;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div style="margin-top: 2rem;">
+            <button type="submit" class="btn">Guardar Producto</button>
+            <a href="{% url 'producto_list' %}" style="color: var(--text-muted); margin-left: 1rem; text-decoration: none;">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
