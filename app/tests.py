@@ -22,4 +22,4 @@ class ProductoViewTest(TestCase):
     def test_view_url_by_name(self):
         resp = self.client.get(reverse('producto_list'))
         self.assertEqual(resp.status_code, 200)
-        self.assertTemplateUsed(resp, 'core/producto_list.html')
+        self.assertTemplateUsed(resp, 'app/producto_list.html')
