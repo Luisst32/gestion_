@@ -7,10 +7,10 @@ Este documento detalla los pasos para simular un despliegue continuo de la aplic
 Para simular el entorno del servidor, debes clonar el proyecto (que ya fue probado y empaquetado por GitHub Actions) en una nueva carpeta en tu sistema operativo:
 
 ```powershell
-# Moverte a una ubicación externa, como Documentos
-cd C:\Users\UNEMI-LR03\Documents
+# Moverte a una ubicación externa, como Documentos o el Escritorio
+cd C:\Users\Luis\Documents
 
-# Descargar el proyecto desde GitHub (reemplaza TU_USUARIO por el tuyo)
+# Descargar el proyecto desde GitHub (asegúrate de que los cambios estén subidos a tu repositorio)
 git clone https://github.com/Luisst32/gestion_.git despliegue_produccion
 
 # Entrar a la nueva carpeta

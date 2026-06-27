@@ -1,8 +1,8 @@
-FROM python:3.12-slim
+FROM python:3.10-slim
 
 # Configuraciones de entorno
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Directorio de trabajo
 WORKDIR /app
@@ -19,3 +19,6 @@ RUN pip install -r requirements.txt
 
 # Copiar el resto del proyecto
 COPY . /app/
+
+# Configuración de ENTRYPOINT
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]

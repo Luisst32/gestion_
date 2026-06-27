@@ -45,7 +45,15 @@ jobs:
     - name: Build Docker Image
       run: |
         docker build -t gestion-web:latest .
-        docker save gestion-web:latest > gestion-web.tar
+        
+    - name: Tag for DockerHub (Simulado)
+      run: |
+        # Etiquetamos la imagen como si fuera a subirse a un repositorio de DockerHub
+        docker tag gestion-web:latest tu_usuario_dockerhub/gestion-web:latest
+        
+    - name: Save Docker Image to Tar
+      run: |
+        docker save tu_usuario_dockerhub/gestion-web:latest > gestion-web.tar
 
     - name: Upload Docker Image Artifact
       uses: actions/upload-artifact@v4
