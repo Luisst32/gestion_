@@ -44,7 +44,7 @@ docker-compose exec web python manage.py migrate
 
 Una vez que los contenedores reporten estar `Running` (puedes verificarlo con `docker-compose ps`), abre tu navegador web y dirígete a:
 
-👉 **[http://localhost:8000](http://localhost:8000)**
+ **[http://localhost:8000](http://localhost:8000)**
 
 Deberías poder visualizar la interfaz moderna del CRUD de **Productos**, verificar que los listados cargan correctamente y que se pueden agregar nuevos registros, confirmando que la base de datos PostgreSQL está operando dentro del contenedor.
 
